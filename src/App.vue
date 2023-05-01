@@ -4,6 +4,8 @@
       <button @click="countStore.increment">{{ count }}</button>
       <button @click="countStore.increment">{{ doubleCount }}</button>
 
+      <p class="color-box">{{ isOdd }}</p>
+
       <p class="color-box">
         Using text interpolation: {{ rawHtml }}
       </p>
@@ -46,7 +48,7 @@ import { useStatus } from './stores/status'
 import { useAttributes } from './stores/attributes'
 
 const countStore = useCounterStore()
-const { count, doubleCount } = storeToRefs(countStore)
+const { count, isOdd, doubleCount } = storeToRefs(countStore)
 
 const htmlStore = useHtmlStore()
 const { rawHtml } = storeToRefs(htmlStore)
